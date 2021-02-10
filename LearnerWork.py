@@ -36,7 +36,7 @@ def GaussianNaiveBayes(dataset):
     gnb = GaussianNB()
     return gnb.fit(dataset[0], dataset[1])
 
-def DecisionTree(dataset, casualita_scelta_dopo_suddivisione = 0, cross_validation_ratio = 10):
-    clf = DecisionTreeClassifier(random_state=casualita_scelta_dopo_suddivisione)
+def DecisionTree(dataset, casualita_scelta_dopo_suddivisione = 0, cross_validation_ratio = 10, max_depth = None):
+    clf = DecisionTreeClassifier(random_state=casualita_scelta_dopo_suddivisione, max_depth=max_depth)
     # cross_val_score(clf, dataset[0], dataset[1], cv=cross_validation_ratio) // to validate dataset
     return clf.fit(dataset[0], dataset[1])

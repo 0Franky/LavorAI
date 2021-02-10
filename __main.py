@@ -8,6 +8,8 @@ dataset = LearnerWork.load_dataset()
 # model = LearnerWork.KNearestNeighbourClassifier(dataset)
 # model = LearnerWork.GaussianNaiveBayes(dataset)
 model = LearnerWork.DecisionTree(dataset)
+# model = LearnerWork.DecisionTree(dataset, max_depth = 3)
+# model = LearnerWork.DecisionTree(dataset, max_depth = 8)
 
 res = workDecoder(model.predict([[2,2,2,5,4,2,2,5,2,4]]))
 
