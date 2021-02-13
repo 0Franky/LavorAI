@@ -120,7 +120,7 @@ if __name__ == '__main__':
                 g.add_edge(nodes[0], nodes[1], weight=random.randint(10, 25))
             break
         except:
-            print("Retry!")
+            print("Lo gnomo sta risolvendo il problema per te! Attendi qualche altro secolo!")
 
     """
     Calcolo lo shortestPath pesato tra source e target
