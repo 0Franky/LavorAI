@@ -2,7 +2,15 @@
 # # from sklearn.model_selection import train_test_split
 import csv
 import numpy as np
-from sklearn.datasets.base import Bunch
+from sklearn import datasets
+from sklearn import neighbors
+from sklearn.naive_bayes import GaussianNB
+from sklearn.datasets import load_iris
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+
+# ds = datasets.load_iris()
+# print(ds)
 
 def load_dataset():
   with open('data/ESEMPI.csv') as csv_file:
@@ -14,16 +22,21 @@ def load_dataset():
       target = np.empty((n_samples,), dtype=int)
 
       for i, sample in enumerate(data_file):
-          data[i] = np.asarray(sample[:-1], dtype=np.float64)
+          data[i] = np.asarray(sample[:-1], dtype=int)
           target[i] = np.asarray(sample[-1], dtype=int)
-      # return [data, target]
-      return Bunch(data=data, target=target)
+      return [data, target]
+    #   return {"data": data.tolist(), "target": target.tolist()}
 
 
-dataset = load_dataset()
+def KNearestNeighbourClassifier(dataset):
+    knn = neighbors.KNeighborsClassifier()
+    return knn.fit(dataset[0], dataset[1])
 
-X = dataset.data
-y = dataset.target
+def GaussianNaiveBayes(dataset):
+    gnb = GaussianNB()
+    return gnb.fit(dataset[0], dataset[1])
 
-out = dataset.predict([2,2,2,5,4,2,2,5,2,4])
-print(out)
+def DecisionTree(dataset, casualita_scelta_dopo_suddivisione = 0, cross_validation_ratio = 10, max_depth = None):
+    clf = DecisionTreeClassifier(random_state=casualita_scelta_dopo_suddivisione, max_depth=max_depth)
+    # cross_val_score(clf, dataset[0], dataset[1], cv=cross_validation_ratio) // to validate dataset
+    return clf.fit(dataset[0], dataset[1])
