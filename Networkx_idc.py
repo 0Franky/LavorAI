@@ -85,7 +85,7 @@ def dist(a, b):
 
 if __name__ == '__main__':
     """
-      Definisco il Grafo vuoto
+    Definisco il Grafo vuoto
     """
     g = nx.Graph()
     # g = nx.DiGraph()
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
     """
     Calcolo lo shortestPath pesato tra source e target
-  """
+    """
     timex = time.perf_counter_ns()
     shortestPath = nx.shortest_path(
         g, source, target, weight='weight', method='dijkstra')
