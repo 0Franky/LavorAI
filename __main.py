@@ -4,6 +4,7 @@ import LearnerWork
 import ConfusioMatrix as cm
 import matplotlib.pyplot as plt
 import ValidationUtils as vu
+import os
 
 
 dataset = LearnerWork.load_dataset()
@@ -28,6 +29,12 @@ if res[0] != "Errore!":
 else:
   print("Si è verificato un errore. Scusa ma sto ancora imparando... '.'")
 
+
+
+print('\n\n\n')
+
+Networkx_idc = os.path.dirname(os.path.realpath(__file__)) + '\\Networkx_idc.py'
+os.system('python ' + Networkx_idc)
 
 print('\n\n')
 

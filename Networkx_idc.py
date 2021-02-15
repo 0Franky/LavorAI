@@ -147,7 +147,7 @@ if __name__ == '__main__':
 
     """
     Calcolo costo percorso dello shortestPath tra source e target
-  """
+    """
     timex = time.perf_counter_ns()
     length = nx.shortest_path_length(g, source, target, weight='weight')
     print(length, " length --> ended in: ",
@@ -155,7 +155,7 @@ if __name__ == '__main__':
 
     """
     Definisco il layout del graph
-  """
+    """
     PannelDim = 2000
     # DECENTI #
     # pos = nx.spring_layout(g, scale=PannelDim, center=None, dim=2)
@@ -173,7 +173,7 @@ if __name__ == '__main__':
 
     """
     Aggiungo le label con i weight a gli edges
-  """
+    """
     all_edges = getAllEdges(g)
     labels = getLabels4edges(all_edges)
     nx.draw_networkx_edge_labels(
@@ -183,7 +183,7 @@ if __name__ == '__main__':
 
     """
     Cambio colore a gli edges e ai nodes dello shortestPath
-  """
+    """
     red_edges = getEdgesShortestPath(shortestPath, all_edges)
     edge_colors = ['black' if (not edge in red_edges) and (not edge[::-1] in red_edges) else 'red' for edge in
                    g.edges()]
@@ -196,7 +196,7 @@ if __name__ == '__main__':
 
     """
     Stampo a video il grafico risultante
-  """
+    """
     nx.draw(g, pos, node_color=color_map, edge_color=edge_colors,
          with_labels=True, node_size=500)
     plt.show()
