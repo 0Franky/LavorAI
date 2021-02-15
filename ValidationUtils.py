@@ -41,7 +41,7 @@ def KFoldCrossValidation(dataset, k):
   return lista1
 
 
-def ShowConfusionMatrix(dataset, k, trainingModelCB):
+def validateDataset(dataset, k, trainingModelCB):
   kfoldAnsw = KFoldCrossValidation(dataset[0], k)
   kfoldWork = KFoldCrossValidation(dataset[1], k)
   predictions = []
@@ -58,7 +58,7 @@ def ShowConfusionMatrix(dataset, k, trainingModelCB):
   # cm.show_matrix(rightWorks, predictions, getLabels())
   # print(classification_report(rightWorks, predictions, target_names=getLabels()))
   
-  # metrics.log_loss(rightWorks, predictions)
+  # print("The logloss is: " + metrics.log_loss(rightWorks, predictions))
   print(classification_report(rightWorks, predictions, target_names=getLabels()))
   cm.show_matrix(rightWorks, predictions, getLabels())
     
