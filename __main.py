@@ -10,7 +10,7 @@ import os
 dataset = LearnerWork.load_dataset()
 # print(dataset)
 
-model = LearnerWork.KNearestNeighbourClassifier(dataset)
+model = LearnerWork.KNearestNeighbourClassifier(dataset, _n_neighbors=5)
 # model = LearnerWork.GaussianNaiveBayes(dataset)
 # model = LearnerWork.DecisionTree(dataset)
 # model = LearnerWork.DecisionTree(dataset, max_depth = 3)

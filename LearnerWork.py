@@ -28,8 +28,8 @@ def load_dataset():
     #   return {"data": data.tolist(), "target": target.tolist()}
 
 
-def KNearestNeighbourClassifier(dataset):
-    knn = neighbors.KNeighborsClassifier()
+def KNearestNeighbourClassifier(dataset, _n_neighbors=5):
+    knn = neighbors.KNeighborsClassifier(n_neighbors=_n_neighbors)
     return knn.fit(dataset[0], dataset[1])
 
 def GaussianNaiveBayes(dataset):
