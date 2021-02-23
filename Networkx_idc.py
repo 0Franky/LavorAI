@@ -125,17 +125,17 @@ if __name__ == '__main__':
     """
     Calcolo lo shortestPath pesato tra source e target
     """
-    timex = time.perf_counter_ns()
-    shortestPath = nx.shortest_path(
-        g, source, target, weight='weight', method='dijkstra')
-    print(shortestPath, " dijkstra --> ended in: ",
-          time.perf_counter_ns() - timex, "ns")
+    # timex = time.perf_counter_ns()
+    # shortestPath = nx.shortest_path(
+    #     g, source, target, weight='weight', method='dijkstra')
+    # print(shortestPath, " dijkstra --> ended in: ",
+    #       time.perf_counter_ns() - timex, "ns")
 
-    timex = time.perf_counter_ns()
-    shortestPath = nx.shortest_path(
-        g, source, target, weight='weight', method='bellman-ford')
-    print(shortestPath, " bellman-ford --> ended in: ",
-          time.perf_counter_ns() - timex, "ns")
+    # timex = time.perf_counter_ns()
+    # shortestPath = nx.shortest_path(
+    #     g, source, target, weight='weight', method='bellman-ford')
+    # print(shortestPath, " bellman-ford --> ended in: ",
+    #       time.perf_counter_ns() - timex, "ns")
 
     timex = time.perf_counter_ns()
     shortestPath = nx.astar_path(g, source, target, weight='weight')
