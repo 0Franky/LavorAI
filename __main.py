@@ -34,7 +34,7 @@ else:
 print('\n\n\n')
 
 Networkx_idc = os.path.dirname(os.path.realpath(__file__)) + '\\Networkx_idc.py'
-os.system('python "' + Networkx_idc + '"2')
+os.system('python "' + Networkx_idc + '"')
 
 print('\n\n')
 
